@@ -1,0 +1,2 @@
+# office365chatbot_modify
+仮想組織のoffice365情報を取得できるか検証するためのWebサイト
