@@ -158,7 +158,7 @@ function updatePage(account, view, data) {
       showCalendar(data);
       break;
 	case Views.profile:
-	  showProfile(displayName);
+	  showProfile(data);
   }
 }
 
