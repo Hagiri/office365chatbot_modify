@@ -15,7 +15,7 @@ async function getEvents() {
   try {
     let events = await graphClient
         .api('/me/events')
-        .select('subject,organizer,start,end')
+        .select('subject,organizer,start,end,location')
         .orderby('createdDateTime DESC')
         .get();
 

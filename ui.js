@@ -181,6 +181,10 @@ function showCalendar(events) {
   var end = createElement('th', null, 'End');
   end.setAttribute('scope', 'col');
   headerrow.appendChild(end);
+  
+  var location = createElement('th', null, 'Location');
+  subject.setAttribute('scope', 'col');
+  headerrow.appendChild(location);
 
   var tbody = document.createElement('tbody');
   table.appendChild(tbody);
@@ -203,6 +207,12 @@ function showCalendar(events) {
     var endcell = createElement('td', null,
       moment.utc(event.end.dateTime).local().format('M/D/YY h:mm A'));
     eventrow.appendChild(endcell);
+	
+	var locationcell = createElement('td', null, event.location.displayName);
+    eventrow.appendChild(locationcell);
+
+	
+	
   }
 
   mainContainer.innerHTML = '';
