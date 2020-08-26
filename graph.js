@@ -28,7 +28,7 @@ async function getEvents() {
   }
 }
 
-async function getEvents() {
+/* async function getEvents() {
   //add for showimg profile
   try {
     let events = await graphClient
@@ -43,5 +43,5 @@ async function getEvents() {
       debug: error
     });
   }
-}
+} */
   
