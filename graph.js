@@ -27,3 +27,21 @@ async function getEvents() {
     });
   }
 }
+
+async function getProfiles() {
+  //add for showimg profile
+  try {
+    let events = await graphClient
+        .api('/me')
+        .select('displayName,surname,givenName,mail,userPrincipalName,id')
+        .get();
+
+    updatePage(msalClient.getAccount(), Views.calendar, Views.profile, events);
+  } catch (error) {
+    updatePage(msalClient.getAccount(), Views.error, {
+      message: 'Error getting profile',
+      debug: error
+    });
+  }
+}
+  

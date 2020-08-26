@@ -31,6 +31,17 @@ function showAuthenticatedNav(account, view) {
     calendarNav.appendChild(calendarLink);
 
     authenticatedNav.appendChild(calendarNav);
+	
+	//Add Profile link
+	var profileNav = createElement('li', 'nav-item');
+
+    var profileLink = createElement('button',
+      `btn btn-link nav-link${view === Views.profile ? ' active' : '' }`,
+      'Profile');
+    calendarLink.setAttribute('onclick', 'getProfiles();');
+    calendarNav.appendChild(profileLink);
+
+    authenticatedNav.appendChild(profileNav);
   }
 }
 
@@ -146,6 +157,8 @@ function updatePage(account, view, data) {
     case Views.calendar:
       showCalendar(data);
       break;
+	case Views.profile:
+	  showProfile(displayName);
   }
 }
 
@@ -210,6 +223,80 @@ function showCalendar(events) {
 	
 	var locationcell = createElement('td', null, event.location.displayName);
     eventrow.appendChild(locationcell);
+
+	
+	
+  }
+
+  mainContainer.innerHTML = '';
+  mainContainer.appendChild(div);
+}
+
+
+//show profile
+function showProfile(events) {
+  var div = document.createElement('div');
+
+  div.appendChild(createElement('h1', null, 'Profile'));
+
+  var table = createElement('table', 'table');
+  div.appendChild(table);
+
+  var thead = document.createElement('thead');
+  table.appendChild(thead);
+
+  var headerrow = document.createElement('tr');
+  thead.appendChild(headerrow);
+//ここから'displayName,surname,givenName,mail,userPrincipalName,id'
+  var displayName = createElement('th', null, 'Display Name');
+  displayName.setAttribute('scope', 'col');
+  headerrow.appendChild(displayName);
+
+  var surname = createElement('th', null, 'Surname');
+  surname.setAttribute('scope', 'col');
+  headerrow.appendChild(surname);
+  
+  var givenName = createElement('th', null, 'Given Name');
+  givenName.setAttribute('scope', 'col');
+  headerrow.appendChild(givenName);
+  
+  var mail = createElement('th', null, 'Mail');
+  mail.setAttribute('scope', 'col');
+  headerrow.appendChild(mail);
+  
+  var userPrincipalName= createElement('th', null, 'User Principal Name');
+  userPrincipalName.setAttribute('scope', 'col');
+  headerrow.appendChild(userPrincipalName);
+  
+  var id = createElement('th', null, 'id');
+  id.setAttribute('scope', 'col');
+  headerrow.appendChild(id);
+
+  var tbody = document.createElement('tbody');
+  table.appendChild(tbody);
+//ここから'displayName,surname,givenName,mail,userPrincipalName,id'
+  for (const event of events.value) {
+    var eventrow = document.createElement('tr');
+    eventrow.setAttribute('key', event.id);
+    tbody.appendChild(eventrow);
+
+    var displayNamecell = createElement('td', null, event.displayName);
+    eventrow.appendChild(displayNamecell);
+
+    var surnamecell = createElement('td', null, event.surname);
+    eventrow.appendChild(surnamecell);
+
+    var givenNamecell = createElement('td', null, event.givenName);
+    eventrow.appendChild(givenNamecell);
+
+    var mailcell = createElement('td', null, event.mail);
+    eventrow.appendChild(mailcell);
+
+	var userPrincipalNamecell = createElement('td', null, event.userPrincipalName);
+    eventrow.appendChild(userPrincipalNamecell);
+   
+	var idcell = createElement('td', null, event.id);
+    eventrow.appendChild(idcell);
 
 	
 	
