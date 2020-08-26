@@ -3,7 +3,7 @@ const authenticatedNav = document.getElementById('authenticated-nav');
 const accountNav = document.getElementById('account-nav');
 const mainContainer = document.getElementById('main-container');
 
-const Views = { error: 1, home: 2, calendar: 3 };
+const Views = { error: 1, home: 2, calendar: 3 , profile: 4};
 
 function createElement(type, className, text) {
   var element = document.createElement(type);
