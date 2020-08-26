@@ -38,7 +38,7 @@ function showAuthenticatedNav(account, view) {
     var profileLink = createElement('button',
       `btn btn-link nav-link${view === Views.profile ? ' active' : '' }`,
       'Profile');
-    calendarLink.setAttribute('onclick', 'getProfiles();');
+    calendarLink.setAttribute('onclick', 'getEvents();');
     calendarNav.appendChild(profileLink);
 
     authenticatedNav.appendChild(profileNav);
