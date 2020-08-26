@@ -3,7 +3,7 @@ const authenticatedNav = document.getElementById('authenticated-nav');
 const accountNav = document.getElementById('account-nav');
 const mainContainer = document.getElementById('main-container');
 
-const Views = { error: 1, home: 2, calendar: 3 , profile: 4};
+const Views = { error: 1, home: 2, calendar: 3 };
 
 function createElement(type, className, text) {
   var element = document.createElement(type);
@@ -32,7 +32,7 @@ function showAuthenticatedNav(account, view) {
 
     authenticatedNav.appendChild(calendarNav);
 	
-	//Add Profile link
+	/* //Add Profile link
 	var profileNav = createElement('li', 'nav-item');
 
     var profileLink = createElement('button',
@@ -41,7 +41,7 @@ function showAuthenticatedNav(account, view) {
     calendarLink.setAttribute('onclick', 'getEvents();');
     calendarNav.appendChild(profileLink);
 
-    authenticatedNav.appendChild(profileNav); 
+    authenticatedNav.appendChild(profileNav);  */
   }
 }
 
@@ -157,9 +157,9 @@ function updatePage(account, view, data) {
     case Views.calendar:
       showCalendar(data);
       break;
-	case Views.profile:
+	/* case Views.profile:
 	  showProfile(data);
-	  break
+	  break */
   }
 }
 
@@ -234,7 +234,7 @@ function showCalendar(events) {
 }
 
 
-//show profile
+/* //show profile
 function showProfile(events) {
   var div = document.createElement('div');
 
@@ -306,3 +306,4 @@ function showProfile(events) {
   mainContainer.innerHTML = '';
   mainContainer.appendChild(div);
 }
+ */
