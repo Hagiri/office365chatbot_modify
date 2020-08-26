@@ -41,7 +41,7 @@ function showAuthenticatedNav(account, view) {
     calendarLink.setAttribute('onclick', 'getEvents();');
     calendarNav.appendChild(profileLink);
 
-    authenticatedNav.appendChild(profileNav);
+    authenticatedNav.appendChild(profileNav); 
   }
 }
 
@@ -159,6 +159,7 @@ function updatePage(account, view, data) {
       break;
 	case Views.profile:
 	  showProfile(data);
+	  break
   }
 }
 

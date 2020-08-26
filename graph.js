@@ -43,5 +43,5 @@ async function getEvents() {
       debug: error
     });
   }
-} 
+}  
   
